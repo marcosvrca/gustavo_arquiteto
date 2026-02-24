@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gustavo Henrique Sousa da Rocha Pereira | Projetos de Luxo e Robustez</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css" />
+
+
+</head>
+
+<body class="text-slate-900 overflow-x-hidden">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed w-full z-50 transition-all duration-300 py-6 bg-transparent">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2 group cursor-pointer">
+        <div class="w-10 h-10 bg-white flex items-center justify-center rounded-sm transition-transform group-hover:rotate-12">
+          <span class="text-[#003366] font-bold text-xl uppercase">G</span>
+        </div>
+        <span class="text-white font-serif text-2xl font-bold tracking-tight">GUSTAVO HENRIQUE ARQ</span>
+      </div>
+
+      <!-- Nav Desktop -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Início</a>
+        <a href="#servicos" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Serviços</a>
+        <a href="#projetos" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Projetos</a>
+        <a href="#contato" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Orçamento</a>
+
+        <a href="https://wa.me/556391386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank"
+          class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-bold transition-all shadow-lg active:scale-95">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          WHATSAPP
+        </a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu">
+        <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#003366] z-[60] translate-x-full flex flex-col items-center justify-center space-y-8 md:hidden">
+    <button id="menu-close" class="absolute top-6 right-6 text-white" aria-label="Fechar menu">
+      <i data-lucide="x" class="w-10 h-10"></i>
+    </button>
+
+    <a href="#home" class="mobile-link text-white text-3xl font-serif">Início</a>
+    <a href="#servicos" class="mobile-link text-white text-3xl font-serif">Serviços</a>
+    <a href="#projetos" class="mobile-link text-white text-3xl font-serif">Projetos</a>
+    <a href="#contato" class="mobile-link text-white text-3xl font-serif">Orçamento</a>
+
+    <a href="https://wa.me/556391386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." class="bg-emerald-500 text-white px-10 py-4 rounded-full flex items-center gap-3 text-xl font-bold">
+      <i data-lucide="phone" class="w-6 h-6"></i>
+      Falar Agora
+    </a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+        class="w-full h-full object-cover"
+        alt="Arquitetura Moderna"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#003366]/95 to-black/30"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-white text-5xl md:text-8xl font-bold leading-tight mb-8">
+          Arquitetura que <br />
+          <span class="text-slate-300">Inspira Legados</span>
+        </h1>
+        <p class="text-white/80 text-lg md:text-2xl mb-12 max-w-2xl leading-relaxed font-light">
+          Elevando o padrão da construção civil e interiores com projetos que unem estética atemporal, funcionalidade extrema e robustez técnica.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="#contato"
+            class="bg-[#003366] hover:bg-[#002244] text-white px-10 py-5 rounded-sm text-center font-bold text-lg transition-all shadow-2xl hover:-translate-y-1 border border-white/10">
+            FAÇA SEU ORÇAMENTO
+          </a>
+          <a href="#servicos"
+            class="backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-sm text-center font-bold text-lg hover:bg-white hover:text-[#003366] transition-all">
+            CONHEÇA NOSSOS SERVIÇOS
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="py-28 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-[#003366] font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Especialidades</span>
+        <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6">Excelência em cada detalhe</h2>
+        <div class="w-24 h-1.5 bg-[#003366] mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+              alt="Interiores"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-10">
+            <h3 class="text-2xl font-bold text-[#003366] mb-4">Interiores</h3>
+            <p class="text-slate-500 leading-relaxed mb-8">Planejamento de espaços internos focados em bem-estar, sofisticação e otimização de fluxos residenciais e comerciais.</p>
+            <a href="javascript:void(0)" id="toggle-interiores-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div id="interiores-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <div class="p-10 border-t border-slate-100 bg-slate-50">
+                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Interiores</h4>
+                <p class="text-slate-700 leading-relaxed mb-4">Nossos projetos de interiores são cuidadosamente elaborados para transformar espaços em ambientes únicos e funcionais. Combinamos estética apurada, as últimas tendências em design e soluções inteligentes para otimizar cada metro quadrado.</p>
+                <p class="text-slate-700 leading-relaxed">Seja para residências de alto padrão, escritórios corporativos ou estabelecimentos comerciais, nossa equipe está pronta para criar o ambiente dos seus sonhos, com foco total na sua experiência e bem-estar. Desde a seleção de materiais e mobiliário até a iluminação e paisagismo interno, cuidamos de cada detalhe com maestria.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop"
+              alt="Escolas"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-10">
+            <h3 class="text-2xl font-bold text-[#003366] mb-4">Escolas</h3>
+            <p class="text-slate-500 leading-relaxed mb-8">Projetos pedagógicos que estimulam o aprendizado através da arquitetura, priorizando segurança e ergonomia infantil.</p>
+            <a href="javascript:void(0)" id="toggle-escolas-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div id="escolas-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <div class="p-10 border-t border-slate-100 bg-slate-50">
+                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Projetos para Escolas</h4>
+                <p class="text-slate-700 leading-relaxed mb-4">Criamos ambientes educacionais que inspiram e promovem o desenvolvimento. Nossos projetos para escolas focam na segurança, funcionalidade e na criação de espaços lúdicos que estimulam a criatividade e o aprendizado ativo.</p>
+                <p class="text-slate-700 leading-relaxed">Consideramos cada detalhe, desde o fluxo de alunos e professores até a escolha de materiais duráveis e de fácil manutenção, garantindo que a arquitetura seja uma ferramenta poderosa no processo pedagógico. Escolas são mais do que edifícios; são centros de formação do futuro, e nossos projetos refletem essa visão.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
+          <div class="h-72 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000&auto=format&fit=crop"
+              alt="Pavimentação"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-10">
+            <h3 class="text-2xl font-bold text-[#003366] mb-4">Pavimentação</h3>
+            <p class="text-slate-500 leading-relaxed mb-8">Soluções técnicas de infraestrutura e pavimentação urbana, garantindo escoamento e durabilidade estrutural.</p>
+            <a href="javascript:void(0)" id="toggle-pavimentacao-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div id="pavimentacao-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+            <div class="p-10 border-t border-slate-100 bg-slate-50">
+                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Projetos de Pavimentação</h4>
+                <p class="text-slate-700 leading-relaxed mb-4">Nossos projetos de pavimentação são essenciais para a infraestrutura urbana e rural, garantindo durabilidade, segurança e o correto escoamento de águas pluviais. Trabalhamos com as melhores técnicas e materiais para entregar superfícies resistentes e eficientes.</p>
+                <p class="text-slate-700 leading-relaxed">Desde vias urbanas até pátios industriais, nossa expertise abrange diversas escalas e necessidades, focando na otimização do custo-benefício e na longevidade das estruturas. Projetamos e acompanhamos a execução para assegurar a máxima qualidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="py-24 bg-slate-50 border-y border-slate-100">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div class="flex flex-col items-center text-center group">
+          <div class="w-20 h-20 bg-white shadow-xl text-[#003366] flex items-center justify-center rounded-2xl mb-8 group-hover:bg-[#003366] group-hover:text-white transition-all duration-500">
+            <i data-lucide="clock" class="w-10 h-10"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-slate-800 mb-4">Entrega no Prazo</h4>
+          <p class="text-slate-500 leading-relaxed">Metodologia ágil de gestão de obras para garantir que seu sonho não sofra atrasos.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center group">
+          <div class="w-20 h-20 bg-white shadow-xl text-[#003366] flex items-center justify-center rounded-2xl mb-8 group-hover:bg-[#003366] group-hover:text-white transition-all duration-500">
+            <i data-lucide="settings" class="w-10 h-10"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-slate-800 mb-4">Customização</h4>
+          <p class="text-slate-500 leading-relaxed">Projetos autorais desenhados do zero para refletir sua identidade e necessidades específicas.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center group">
+          <div class="w-20 h-20 bg-white shadow-xl text-[#003366] flex items-center justify-center rounded-2xl mb-8 group-hover:bg-[#003366] group-hover:text-white transition-all duration-500">
+            <i data-lucide="shield-check" class="w-10 h-10"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-slate-800 mb-4">Garantia Total</h4>
+          <p class="text-slate-500 leading-relaxed">Suporte técnico permanente e acompanhamento rigoroso para assegurar qualidade máxima.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA DE PROJETOS -->
+  <section id="projetos" class="py-28 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div class="max-w-2xl">
+          <span class="text-[#003366] font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Portfólio</span>
+          <h2 class="text-4xl md:text-6xl font-bold text-slate-900">Projetos em Destaque</h2>
+        </div>
+        <a href="javascript:void(0)" id="toggle-portfolio-btn"
+          class="bg-slate-100 hover:bg-slate-200 text-[#003366] px-10 py-4 rounded-sm font-bold transition-all flex items-center gap-3">
+          VER PORTFÓLIO COMPLETO <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Casa do Lago">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
+            <h3 class="text-white text-3xl font-serif font-bold">Casa do Lago</h3>
+          </div>
+        </div>
+
+        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Nexus Tower">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Corporativo</span>
+            <h3 class="text-white text-3xl font-serif font-bold">Nexus Tower</h3>
+          </div>
+        </div>
+
+        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Campus Global">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Educacional</span>
+            <h3 class="text-white text-3xl font-serif font-bold">Campus Global</h3>
+          </div>
+        </div>
+
+        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Praça das Artes">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Urbanismo</span>
+            <h3 class="text-white text-3xl font-serif font-bold">Praça das Artes</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="portfolio-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Placeholder Images (10 images) -->
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1519710164239-da116ffed49c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 1">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Projeto Sereno</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1540552737380-482a6f67233f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 2">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Comercial</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Espaço Urbano</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 3">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Vista Panorâmica</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1550592704-cc9b8772671f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 4">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Reforma</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Ambiente Renovado</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c696e2e50?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 5">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Interiores</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Design Moderno</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8211b846e4?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 6">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Paisagismo</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Jardim Vertical</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1582268710928-8758872e4240?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 7">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Conforto Familiar</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1540552822452-f48372332617?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 8">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Comercial</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Café Conceito</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1518059103700-eb8926946654?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 9">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Interiores</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Espaço Minimalista</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
+            <img src="https://images.unsplash.com/photo-1456948577319-58b2110c14c3?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 10">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
+              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
+              <h3 class="text-white text-3xl font-serif font-bold">Design Harmônico</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO DE CONTATO -->
+  <section id="contato" class="py-28 bg-[#003366] relative overflow-hidden mb-12">
+    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="bg-white rounded-3xl shadow-[0_50px_100px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col lg:flex-row">
+
+        <!-- Info Col -->
+        <div class="lg:w-2/5 bg-[#002244] p-10 text-white flex flex-col justify-between">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif">Inicie seu projeto hoje</h2>
+            <p class="text-slate-300 mb-12 text-lg leading-relaxed">
+              Estamos prontos para ouvir sua ideia e oferecer uma consultoria especializada para viabilizar seu investimento.
+            </p>
+          </div>
+
+
+        </div>
+
+        <!-- Form Col -->
+        <div class="lg:w-3/5 p-16">
+          <h2 class="text-3xl font-bold text-slate-800 mb-8">BRIEFING DE ARQUITETURA – CONSTRUÇÃO</h2>
+
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPMp5SCZpZ51mzf-wTCXIkOtgTpD8GOUbh4rZzkx4cOYJ_Kg/viewform?usp=header" target="_blank"
+            class="w-full bg-[#003366] hover:bg-[#002244] text-white font-bold py-5 rounded-xl shadow-xl transition-all active:scale-[0.98] uppercase tracking-[0.2em] text-lg mb-8 text-center block">
+            Preencher Briefing
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-[#001122] text-slate-400 py-20 border-t border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20 justify-items-center">
+
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center space-x-2 mb-8">
+            <div class="w-8 h-8 bg-white flex items-center justify-center rounded-sm">
+              <span class="text-[#001122] font-bold text-lg">G</span>
+            </div>
+            <span class="text-white font-serif text-2xl font-bold tracking-tight">GUSTAVO HENRIQUE ARQ</span>
+          </div>
+
+          <p class="text-base leading-relaxed mb-8">
+            Consolidando visões em estruturas tangíveis desde 2023. Tecnologia, arte e engenharia em perfeita sintonia.
+          </p>
+
+          <div class="flex space-x-5">
+            <a href="https://www.instagram.com/arq.gustavoh?igsh=MXRuMnRlYmU3Z2FpNA==" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#003366] hover:text-white transition-all">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#003366] hover:text-white transition-all">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#003366] hover:text-white transition-all">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Explorar</h4>
+          <ul class="space-y-4">
+            <li><a href="#home" class="hover:text-white transition-colors">Início</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Serviços Especializados</a></li>
+            <li><a href="#projetos" class="hover:text-white transition-colors">Portfólio de Obras</a></li>
+            <li><a href="#contato" class="hover:text-white transition-colors">Solicitar Orçamento</a></li>
+          </ul>
+        </div>
+
+                <div>
+
+                  <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Contato</h4>
+
+                  <ul class="space-y-6">
+
+                    <li class="flex items-start gap-4">
+
+                      <i data-lucide="map-pin" class="w-5 h-5 text-white shrink-0"></i>
+
+                      <span>Palmas - Tocantins</span>
+
+                    </li>
+
+                    <li class="flex items-center gap-4">
+
+                      <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+
+                      <span>(63) 9 9138-6358</span>
+
+                    </li>
+
+                  </ul>
+
+                </div>
+
+        
+
+                <div>
+
+                  <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Serviços</h4>
+
+                  <ul class="space-y-4">
+
+                    <li><a href="#servicos" class="hover:text-white transition-colors">Interiores</a></li>
+
+                    <li><a href="#servicos" class="hover:text-white transition-colors">Escolas</a></li>
+
+                    <li><a href="#servicos" class="hover:text-white transition-colors">Pavimentação</a></li>
+
+                    <li><a href="#contato" class="hover:text-white transition-colors">Consultoria</a></li>
+
+                  </ul>
+
+                </div>
+
+        
+
+        
+
+              </div>
+
+      <div class="pt-10 border-t border-white/5 text-center">
+        <p class="text-xs tracking-[0.3em] text-slate-500 uppercase">
+          &copy; <span id="year"></span> Gustavo Henrique Arquiteto e Urbanista. Criado com excelência para resultados extraordinários.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING -->
+  <a href="https://wa.me/556391386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank"
+    class="fixed bottom-10 right-10 bg-emerald-500 text-white p-5 rounded-full shadow-[0_15px_35px_rgba(16,185,129,0.4)] hover:scale-110 active:scale-95 transition-all z-50 group"
+    aria-label="Abrir WhatsApp">
+    <i data-lucide="phone" class="w-7 h-7"></i>
+    <span class="absolute right-full mr-6 bg-white text-[#003366] px-5 py-2.5 rounded-xl text-sm font-bold shadow-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-all whitespace-nowrap -translate-y-1/4">
+      Olá! Como podemos ajudar?
+    </span>
+  </a>
+
+  <script src="script.js"></script>
+
+  <!-- Lucide init + year fallback (caso não esteja no seu script.js) -->
+  <script>
+    if (window.lucide) lucide.createIcons();
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

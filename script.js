@@ -50,6 +50,8 @@ function setupServiceDetailsToggle(buttonId, detailsId) {
 setupServiceDetailsToggle('toggle-interiores-btn', 'interiores-details');
 setupServiceDetailsToggle('toggle-escolas-btn', 'escolas-details');
 setupServiceDetailsToggle('toggle-pavimentacao-btn', 'pavimentacao-details');
+setupServiceDetailsToggle('toggle-interiores2-btn', 'interiores2-details');
+setupServiceDetailsToggle('toggle-consultoria-btn', 'consultoria-details');
 
 // Setup toggle for full portfolio
 setupServiceDetailsToggle('toggle-portfolio-btn', 'portfolio-details');

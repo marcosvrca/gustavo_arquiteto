@@ -3,233 +3,387 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gustavo Henrique Sousa da Rocha Pereira | Projetos de Luxo e Robustez</title>
+  <meta name="description" content="Arquitetura e urbanismo em Palmas-TO. Projetos residenciais, comerciais e interiores com rigor técnico e estética atemporal." />
+  <title>Gustavo Henrique | Arquitetura e Urbanismo</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Manrope", "system-ui", "sans-serif"],
+            display: ["Cormorant Garamond", "Georgia", "serif"],
+          },
+        },
+      },
+    };
+  </script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <link rel="stylesheet" href="style.css" />
-
-
 </head>
 
-<body class="text-slate-900 overflow-x-hidden">
+<body class="text-[var(--ink)] overflow-x-hidden bg-[var(--paper)] antialiased">
 
-  <!-- HEADER -->
-  <header id="main-header" class="fixed w-full z-50 transition-all duration-300 py-6 bg-transparent">
-    <div class="container mx-auto px-6 flex justify-between items-center">
-      <!-- Logo -->
-      <div class="flex items-center space-x-2 group cursor-pointer">
-        <div class="w-10 h-10 bg-white flex items-center justify-center rounded-sm transition-transform group-hover:rotate-12">
-          <span class="text-[#003366] font-bold text-xl uppercase">G</span>
+  <header id="main-header" class="fixed w-full z-50 transition-all duration-300 py-7 md:py-8 bg-transparent">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10 flex justify-between items-center">
+      <a href="#home" class="flex items-center gap-3 group cursor-pointer">
+        <img
+          src="imagens/logos/LOGOGHARQUITETOPNG3.png"
+          alt="Gustavo Henrique Arquitetura"
+          width="44"
+          height="44"
+          class="h-9 w-9 md:h-11 md:w-11 object-contain shrink-0 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-transform duration-500 group-hover:scale-105"
+          decoding="async"
+        />
+        <div class="hidden sm:block text-left">
+          <span class="block text-white font-display text-xl md:text-2xl tracking-[0.02em] leading-none">Gustavo Henrique</span>
+          <span class="text-white/55 text-[10px] md:text-[11px] uppercase tracking-[0.35em] font-medium">Arquitetura</span>
         </div>
-        <span class="text-white font-serif text-2xl font-bold tracking-tight">GUSTAVO HENRIQUE ARQ</span>
-      </div>
+      </a>
 
-      <!-- Nav Desktop -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="#home" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Início</a>
-        <a href="#servicos" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Serviços</a>
-        <a href="#projetos" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Projetos</a>
-        <a href="#contato" class="text-white/90 hover:text-white font-medium text-sm transition-colors uppercase tracking-wider">Orçamento</a>
-
-        <a href="https://wa.me/5563991386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank"
-          class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-bold transition-all shadow-lg active:scale-95">
-          <i data-lucide="phone" class="w-4 h-4"></i>
-          WHATSAPP
+      <nav class="hidden lg:flex items-center gap-10">
+        <a href="#home" class="nav-link text-white/85 hover:text-white text-[13px] font-medium tracking-[0.12em] uppercase">Início</a>
+        <a href="#servicos" class="nav-link text-white/85 hover:text-white text-[13px] font-medium tracking-[0.12em] uppercase">Serviços</a>
+        <a href="#projetos" class="nav-link text-white/85 hover:text-white text-[13px] font-medium tracking-[0.12em] uppercase">Projetos</a>
+        <a href="#contato" class="nav-link text-white/85 hover:text-white text-[13px] font-medium tracking-[0.12em] uppercase">Contato</a>
+        <a href="https://wa.me/5563991386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 border border-white/30 text-white text-[12px] font-semibold tracking-[0.15em] uppercase px-5 py-2.5 hover:bg-white hover:text-[var(--ink)] transition-all duration-300">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          WhatsApp
         </a>
       </nav>
 
-      <!-- Mobile Toggle -->
-      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu">
-        <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+      <button id="menu-toggle" class="lg:hidden text-white p-2 -mr-2 focus:outline-none" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <i data-lucide="menu" id="menu-icon" class="w-7 h-7"></i>
       </button>
     </div>
   </header>
 
-  <!-- MOBILE MENU OVERLAY -->
-  <div id="mobile-menu" class="fixed inset-0 bg-[#003366] z-[60] translate-x-full flex flex-col items-center justify-center space-y-8 md:hidden">
-    <button id="menu-close" class="absolute top-6 right-6 text-white" aria-label="Fechar menu">
-      <i data-lucide="x" class="w-10 h-10"></i>
+  <div id="mobile-menu" class="fixed inset-0 z-[60] translate-x-full flex flex-col items-center justify-center gap-10 lg:hidden">
+    <button id="menu-close" class="absolute top-8 right-8 text-white/80 p-2 hover:text-white transition-colors" type="button" aria-label="Fechar menu">
+      <i data-lucide="x" class="w-8 h-8"></i>
     </button>
-
-    <a href="#home" class="mobile-link text-white text-3xl font-serif">Início</a>
-    <a href="#servicos" class="mobile-link text-white text-3xl font-serif">Serviços</a>
-    <a href="#projetos" class="mobile-link text-white text-3xl font-serif">Projetos</a>
-    <a href="#contato" class="mobile-link text-white text-3xl font-serif">Orçamento</a>
-
-    <a href="https://wa.me/5563991386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." class="bg-emerald-500 text-white px-10 py-4 rounded-full flex items-center gap-3 text-xl font-bold">
-      <i data-lucide="phone" class="w-6 h-6"></i>
-      Falar Agora
+    <a href="#home" class="mobile-link text-white font-display text-4xl">Início</a>
+    <a href="#servicos" class="mobile-link text-white font-display text-4xl">Serviços</a>
+    <a href="#projetos" class="mobile-link text-white font-display text-4xl">Projetos</a>
+    <a href="#contato" class="mobile-link text-white font-display text-4xl">Contato</a>
+    <a href="https://wa.me/5563991386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank" rel="noopener noreferrer"
+      class="mt-4 inline-flex items-center gap-3 border border-white/35 text-white px-8 py-4 text-sm font-semibold tracking-[0.2em] uppercase">
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      WhatsApp
     </a>
   </div>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="relative h-screen flex items-center overflow-hidden">
-    <div class="absolute inset-0">
+  <section id="home" class="relative min-h-[100dvh] flex items-end md:items-center overflow-hidden">
+    <div class="absolute inset-0 hero-grain">
       <img
-        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
-        class="w-full h-full object-cover"
-        alt="Arquitetura Moderna"
+        src="imagens/logos/LOGOGHARQUITETO3D_Azul_e_Dourado.png"
+        class="w-full h-full object-cover object-[50%_45%] md:object-center scale-105"
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+        aria-hidden="true"
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-[#003366]/95 to-black/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0c0b0a] via-[#0c0b0a]/75 to-[#0c0b0a]/35 md:bg-gradient-to-r md:from-[#0c0b0a]/92 md:via-[#0c0b0a]/55 md:to-transparent"></div>
     </div>
 
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="max-w-4xl">
-        <h1 class="text-white text-5xl md:text-8xl font-bold leading-tight mb-8">
-          Arquitetura que <br />
-          <span class="text-slate-300">Inspira Legados</span>
+    <div class="max-w-[1400px] w-full mx-auto px-6 md:px-10 relative z-10 pb-24 md:pb-0 md:py-32 pt-28 md:pt-32">
+      <div class="max-w-3xl reveal is-visible">
+        <p class="text-white/60 text-[11px] md:text-xs font-semibold tracking-[0.45em] uppercase mb-6 md:mb-8">Palmas · Tocantins</p>
+        <h1 class="text-white font-display text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05] mb-6 md:mb-8">
+          Espaços pensados para durar gerações.
         </h1>
-        <p class="text-white/80 text-lg md:text-2xl mb-12 max-w-2xl leading-relaxed font-light">
-          Elevando o padrão da construção civil e interiores com projetos que unem estética atemporal, funcionalidade extrema e robustez técnica.
+        <p class="text-white/75 text-base md:text-xl font-light leading-relaxed max-w-xl mb-10 md:mb-12 border-l border-white/20 pl-6">
+          Projetos de arquitetura e interiores que equilibram estética atemporal, conforto e rigor técnico — do conceito à execução.
         </p>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="#contato"
-            class="bg-[#003366] hover:bg-[#002244] text-white px-10 py-5 rounded-sm text-center font-bold text-lg transition-all shadow-2xl hover:-translate-y-1 border border-white/10">
-            FAÇA SEU ORÇAMENTO
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-5">
+          <a href="#contato" class="btn-primary inline-flex justify-center items-center px-10 py-4 text-[13px] font-semibold tracking-[0.18em] uppercase">
+            Solicitar conversa
           </a>
-          <a href="#servicos"
-            class="backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-sm text-center font-bold text-lg hover:bg-white hover:text-[#003366] transition-all">
-            CONHEÇA NOSSOS SERVIÇOS
+          <a href="#servicos" class="inline-flex justify-center items-center px-10 py-4 text-[13px] font-semibold tracking-[0.18em] uppercase text-white border border-white/35 hover:bg-white/10 transition-colors">
+            Ver especialidades
           </a>
         </div>
       </div>
     </div>
+
+    <a href="#servicos" class="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-3 text-white/40 hover:text-white/70 transition-colors" aria-label="Rolar para serviços">
+      <span class="text-[10px] tracking-[0.35em] uppercase">Explorar</span>
+      <span class="w-px h-12 bg-gradient-to-b from-white/50 to-transparent block"></span>
+    </a>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="py-28 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-20">
-        <span class="text-[#003366] font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Especialidades</span>
-        <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6">Excelência em cada detalhe</h2>
-        <div class="w-24 h-1.5 bg-[#003366] mx-auto"></div>
+  <section class="py-16 md:py-20 bg-[var(--ink)] text-[var(--paper)]">
+    <div class="max-w-[1100px] mx-auto px-6 md:px-10 text-center reveal">
+      <p lang="en" class="font-display text-2xl md:text-3xl lg:text-[2.15rem] leading-snug font-normal text-white/90 italic">
+        “Architecture is the masterly, correct and magnificent play of masses brought together in light.”
+      </p>
+      <p class="mt-6 text-[11px] tracking-[0.3em] uppercase text-white/40">Le Corbusier</p>
+    </div>
+  </section>
+
+  <section id="servicos" class="py-24 md:py-32 bg-[var(--paper)]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16 md:mb-20 reveal">
+        <div class="max-w-2xl">
+          <span class="text-[var(--accent)] text-[11px] font-semibold tracking-[0.4em] uppercase block mb-5">Especialidades</span>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--ink)] leading-[1.08]">
+            Disciplina em cada escala — da residência ao equipamento urbano.
+          </h2>
+        </div>
+        <p class="text-[var(--ink-muted)] text-base md:text-lg max-w-md leading-relaxed lg:text-right">
+          Cada entrega combina estudo de implantação, conforto ambiental e detalhamento construtivo, com comunicação clara em todas as etapas.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <!-- Card 1 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
-          <div class="h-72 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
-              alt="Interiores"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
+        <article class="service-card bg-[var(--surface)] border border-[var(--line)] overflow-hidden group reveal reveal-delay-1">
+          <div class="aspect-[16/11] overflow-hidden relative">
+            <img src="imagens/projetos/RESIDENCIALROCHA.png" alt="Projeto residencial Rocha" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <div class="p-10">
-            <h3 class="text-2xl font-bold text-[#003366] mb-4">Projetos residências</h3>
-            <p class="text-slate-500 leading-relaxed mb-8">Desenvolvemos projetos residenciais personalizados, unindo estética, funcionalidade e conforto para criar lares únicos que refletem a personalidade de cada cliente.</p>
-            <a href="javascript:void(0)" id="toggle-interiores-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </a>
+          <div class="p-8 md:p-10">
+            <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-4">Projetos residenciais</h3>
+            <p class="text-[var(--ink-muted)] leading-relaxed mb-8 text-[15px]">Lares sob medida, com plantas fluidas, iluminação natural e materiais escolhidos para envelhecer com elegância.</p>
+            <button type="button" id="toggle-interiores-btn" class="text-[12px] font-semibold tracking-[0.2em] uppercase text-[var(--ink)] inline-flex items-center gap-2 hover:gap-3 transition-all">
+              Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
           </div>
           <div id="interiores-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <div class="p-10 border-t border-slate-100 bg-slate-50">
-                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Projetos Residenciais</h4>
-                <p class="text-slate-700 leading-relaxed mb-4">Especializados na criação de lares que combinam o sonho do cliente com a expertise arquitetônica. Desde o conceito inicial até a entrega, cada detalhe é pensado para proporcionar o máximo de bem-estar, inovação e sustentabilidade.</p>
-                <p class="text-slate-700 leading-relaxed">Nossa abordagem integrada garante que o projeto resida em perfeita harmonia com o entorno e com as necessidades individuais, resultando em espaços que são verdadeiros refúgios personalizados.</p>
+            <div class="px-8 md:px-10 pb-10 pt-0 border-t border-[var(--line)] bg-[var(--paper-warm)]/50">
+              <p class="text-[var(--ink-muted)] leading-relaxed pt-8 text-[15px]">Do briefing à entrega do projeto executivo, alinhamos sonho do cliente, orçamento e legislação local. Cada ambiente é desenhado para circulação intuitiva, armazenamento inteligente e identidade visual coerente.</p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 2 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
-          <div class="h-72 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop"
-              alt="Escolas"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+        <article class="service-card bg-[var(--surface)] border border-[var(--line)] overflow-hidden group reveal reveal-delay-2">
+          <div class="aspect-[16/11] overflow-hidden relative">
+            <img src="imagens/projetos/FACHADALOJACOMERCIAL.png" alt="Fachada loja comercial" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <div class="p-10">
-            <h3 class="text-2xl font-bold text-[#003366] mb-4">Projetos Comerciais</h3>
-            <p class="text-slate-500 leading-relaxed mb-8">Criamos projetos comerciais inovadores, que otimizam o espaço e a experiência do cliente, impulsionando o sucesso do seu negócio.</p>
-            <a href="javascript:void(0)" id="toggle-escolas-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </a>
+          <div class="p-8 md:p-10">
+            <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-4">Projetos comerciais</h3>
+            <p class="text-[var(--ink-muted)] leading-relaxed mb-8 text-[15px]">Espaços que traduzem marca, otimizam fluxos e elevam a experiência de quem trabalha e visita.</p>
+            <button type="button" id="toggle-escolas-btn" class="text-[12px] font-semibold tracking-[0.2em] uppercase text-[var(--ink)] inline-flex items-center gap-2 hover:gap-3 transition-all">
+              Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
           </div>
           <div id="escolas-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <div class="p-10 border-t border-slate-100 bg-slate-50">
-                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Projetos Comerciais</h4>
-                <p class="text-slate-700 leading-relaxed mb-4">Desenvolvemos soluções arquitetônicas que capturam a essência da sua marca e atraem o público-alvo. De lojas a escritórios, restaurantes e espaços de serviço, priorizamos a funcionalidade e o design que geram valor para o seu empreendimento.</p>
-                <p class="text-slate-700 leading-relaxed">Cada projeto é uma oportunidade de criar um ambiente que não apenas atende às necessidades operacionais, mas também oferece uma experiência memorável aos seus clientes, reforçando a identidade e o profissionalismo do seu negócio.</p>
+            <div class="px-8 md:px-10 pb-10 pt-0 border-t border-[var(--line)] bg-[var(--paper-warm)]/50">
+              <p class="text-[var(--ink-muted)] leading-relaxed pt-8 text-[15px]">Lojas, escritórios e restaurantes com foco em conversão, conforto acústico e identidade visual. Integramos fachada, interior e sinalização para um discurso único.</p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 3 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
-          <div class="h-72 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000&auto=format&fit=crop"
-              alt="Pavimentação"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+        <article class="service-card bg-[var(--surface)] border border-[var(--line)] overflow-hidden group reveal reveal-delay-3">
+          <div class="aspect-[16/11] overflow-hidden relative">
+            <img src="imagens/projetos/INTERIORCAPELASAOMIGUELARCANJO.png" alt="Interior Capela São Miguel Arcanjo" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <div class="p-10">
-            <h3 class="text-2xl font-bold text-[#003366] mb-4">Projetos Institucionais</h3>
-            <p class="text-slate-500 leading-relaxed mb-8">Desenvolvemos projetos institucionais que atendem às rigorosas demandas de funcionalidade, segurança e representatividade para órgãos públicos e privados.</p>
-            <a href="javascript:void(0)" id="toggle-pavimentacao-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </a>
+          <div class="p-8 md:p-10">
+            <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-4">Projetos institucionais</h3>
+            <p class="text-[var(--ink-muted)] leading-relaxed mb-8 text-[15px]">Edifícios com demandas técnicas rigorosas, acessibilidade e representatividade institucional.</p>
+            <button type="button" id="toggle-pavimentacao-btn" class="text-[12px] font-semibold tracking-[0.2em] uppercase text-[var(--ink)] inline-flex items-center gap-2 hover:gap-3 transition-all">
+              Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
           </div>
           <div id="pavimentacao-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <div class="p-10 border-t border-slate-100 bg-slate-50">
-                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Projetos Institucionais</h4>
-                <p class="text-slate-700 leading-relaxed mb-4">Nossa expertise em projetos institucionais abrange desde edifícios governamentais e educacionais até centros de saúde e culturais. Focamos em soluções que promovem a acessibilidade, a eficiência energética e a criação de ambientes que inspiram confiança e respeito.</p>
-                <p class="text-slate-700 leading-relaxed">Compreendemos a importância da representatividade e da durabilidade, entregando projetos que se destacam pela sua qualidade técnica e pelo seu impacto positivo na comunidade, sempre em conformidade com as regulamentações vigentes.</p>
+            <div class="px-8 md:px-10 pb-10 pt-0 border-t border-[var(--line)] bg-[var(--paper-warm)]/50">
+              <p class="text-[var(--ink-muted)] leading-relaxed pt-8 text-[15px]">Atendemos requisitos de normas, fluxos operacionais e durabilidade. Projetos pensados para uso intenso e manutenção eficiente.</p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 4 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
-          <div class="h-72 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1550592704-cc9b8772671f?q=80&w=2000&auto=format&fit=crop"
-              alt="Projetos Interiores"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+        <article class="service-card bg-[var(--surface)] border border-[var(--line)] overflow-hidden group reveal">
+          <div class="aspect-[16/11] overflow-hidden relative">
+            <img src="imagens/projetos/SALADEJANTARNUNES.png" alt="Sala de jantar apartamento Nunes" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <div class="p-10">
-            <h3 class="text-2xl font-bold text-[#003366] mb-4">Projetos Interiores</h3>
-            <p class="text-slate-500 leading-relaxed mb-8">Criamos ambientes internos que combinam funcionalidade, estética e conforto, refletindo a personalidade e o estilo de vida de cada cliente.</p>
-            <a href="javascript:void(0)" id="toggle-interiores2-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </a>
+          <div class="p-8 md:p-10">
+            <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-4">Interiores</h3>
+            <p class="text-[var(--ink-muted)] leading-relaxed mb-8 text-[15px]">Ambientação completa: layout, marcenaria, iluminação e especificação de acabamentos.</p>
+            <button type="button" id="toggle-interiores2-btn" class="text-[12px] font-semibold tracking-[0.2em] uppercase text-[var(--ink)] inline-flex items-center gap-2 hover:gap-3 transition-all">
+              Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
           </div>
           <div id="interiores2-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <div class="p-10 border-t border-slate-100 bg-slate-50">
-                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Projetos de Interiores</h4>
-                <p class="text-slate-700 leading-relaxed mb-4">Desenvolvemos projetos detalhados para espaços residenciais e comerciais, com foco na otimização do layout, seleção de mobiliário, acabamentos e iluminação. Nosso objetivo é transformar ambientes, tornando-os mais bonitos, práticos e acolhedores.</p>
-                <p class="text-slate-700 leading-relaxed">Consideramos as últimas tendências do design, sempre aliadas à atemporalidade e à sustentabilidade, para criar interiores que superam as expectativas e proporcionam uma experiência única para quem os habita ou frequenta.</p>
+            <div class="px-8 md:px-10 pb-10 pt-0 border-t border-[var(--line)] bg-[var(--paper-warm)]/50">
+              <p class="text-[var(--ink-muted)] leading-relaxed pt-8 text-[15px]">Da moodboard ao livro de especificações, cuidamos da coerência cromática, texturas e ergonomia para um resultado acolhedor e funcional.</p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Card 5 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all group border border-slate-50">
-          <div class="h-72 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000&auto=format&fit=crop"
-              alt="Consultoria"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-            <div class="absolute inset-0 bg-[#003366]/20 group-hover:bg-transparent transition-colors"></div>
+        <article class="service-card bg-[var(--surface)] border border-[var(--line)] overflow-hidden group reveal md:col-span-2 xl:col-span-1">
+          <div class="aspect-[16/11] xl:aspect-[16/11] overflow-hidden relative">
+            <img src="imagens/projetos/ESCRITORIO.png" alt="Escritório do arquiteto" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-[1.04]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-          <div class="p-10">
-            <h3 class="text-2xl font-bold text-[#003366] mb-4">Consultoria</h3>
-            <p class="text-slate-500 leading-relaxed mb-8">Oferecemos consultoria especializada em todas as fases do seu projeto, desde a viabilidade inicial até a conclusão, garantindo decisões estratégicas e resultados de excelência.</p>
-            <a href="javascript:void(0)" id="toggle-consultoria-btn" class="text-[#003366] font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
-              VER DETALHES <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </a>
+          <div class="p-8 md:p-10">
+            <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-4">Consultoria</h3>
+            <p class="text-[var(--ink-muted)] leading-relaxed mb-8 text-[15px]">Acompanhamento estratégico em viabilidade, compatibilização e gestão de projeto.</p>
+            <button type="button" id="toggle-consultoria-btn" class="text-[12px] font-semibold tracking-[0.2em] uppercase text-[var(--ink)] inline-flex items-center gap-2 hover:gap-3 transition-all">
+              Detalhes <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
           </div>
           <div id="consultoria-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-            <div class="p-10 border-t border-slate-100 bg-slate-50">
-                <h4 class="text-xl font-bold text-[#003366] mb-4">Aprofunde-se em Consultoria Arquitetônica</h4>
-                <p class="text-slate-700 leading-relaxed mb-4">Nossos serviços de consultoria abrangem análise de viabilidade, estudo de zoneamento, estimativa de custos, gerenciamento de projetos e otimização de processos. Auxiliamos clientes a tomar decisões informadas, minimizando riscos e maximizando o potencial de seus investimentos.</p>
-                <p class="text-slate-700 leading-relaxed">Com uma visão estratégica e conhecimento técnico aprofundado, nossa equipe está preparada para guiar você através dos desafios de qualquer empreendimento arquitetônico, garantindo conformidade, inovação e o alcance dos seus objetivos.</p>
+            <div class="px-8 md:px-10 pb-10 pt-0 border-t border-[var(--line)] bg-[var(--paper-warm)]/50">
+              <p class="text-[var(--ink-muted)] leading-relaxed pt-8 text-[15px]">Apoio em decisões críticas: estudo preliminar, análise de custos, interface com engenheiros e fiscalização de qualidade executiva.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[var(--paper-warm)] border-y border-[var(--line)]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-12">
+        <div class="text-center md:text-left reveal">
+          <div class="inline-flex w-14 h-14 items-center justify-center border border-[var(--line)] text-[var(--ink)] mb-8">
+            <i data-lucide="clock" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display text-2xl text-[var(--ink)] mb-3">Cronograma claro</h4>
+          <p class="text-[var(--ink-muted)] leading-relaxed text-[15px]">Fases definidas e comunicação objetiva para você acompanhar o projeto sem surpresas.</p>
+        </div>
+        <div class="text-center md:text-left reveal reveal-delay-1">
+          <div class="inline-flex w-14 h-14 items-center justify-center border border-[var(--line)] text-[var(--ink)] mb-8">
+            <i data-lucide="pen-tool" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display text-2xl text-[var(--ink)] mb-3">Projeto autoral</h4>
+          <p class="text-[var(--ink-muted)] leading-relaxed text-[15px]">Soluções desenhadas para o seu terreno, hábitos e orçamento — sem fórmulas prontas.</p>
+        </div>
+        <div class="text-center md:text-left reveal reveal-delay-2">
+          <div class="inline-flex w-14 h-14 items-center justify-center border border-[var(--line)] text-[var(--ink)] mb-8">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display text-2xl text-[var(--ink)] mb-3">Rigor técnico</h4>
+          <p class="text-[var(--ink-muted)] leading-relaxed text-[15px]">Detalhamento alinhado à execução, normas e boas práticas construtivas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="py-24 md:py-32 bg-[var(--surface)]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 md:mb-16 reveal">
+        <div>
+          <span class="text-[var(--accent)] text-[11px] font-semibold tracking-[0.4em] uppercase block mb-5">Portfólio</span>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--ink)] leading-[1.08]">Obras e ambientes</h2>
+          <p class="text-[var(--ink-muted)] mt-4 max-w-lg text-[15px]">Fotografias e projetos assinados pelo escritório — cada imagem corresponde a um trabalho real.</p>
+        </div>
+        <button type="button" id="toggle-portfolio-btn" class="self-start md:self-auto inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.2em] uppercase text-[var(--ink)] border border-[var(--ink)] px-8 py-4 hover:bg-[var(--ink)] hover:text-white transition-colors">
+          Ver mais trabalhos
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] cursor-pointer border border-[var(--line)] reveal">
+          <img src="imagens/projetos/FACHADAGALERIAJARDIM.png" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.1s] group-hover:scale-[1.05]" alt="Fachada Galeria Jardim" />
+          <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+            <h3 class="text-white font-display text-2xl md:text-3xl">Galeria Jardim</h3>
+          </div>
+        </div>
+        <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] cursor-pointer border border-[var(--line)] reveal reveal-delay-1">
+          <img src="imagens/projetos/MINIMERCADO.png" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.1s] group-hover:scale-[1.05]" alt="Projeto minimercado" />
+          <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Comercial</span>
+            <h3 class="text-white font-display text-2xl md:text-3xl">Minimercado</h3>
+          </div>
+        </div>
+        <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] cursor-pointer border border-[var(--line)] reveal reveal-delay-2">
+          <img src="imagens/projetos/SUITENUNES.png" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.1s] group-hover:scale-[1.05]" alt="Suíte apartamento Nunes" />
+          <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Interiores</span>
+            <h3 class="text-white font-display text-2xl md:text-3xl">Suíte · Nunes</h3>
+          </div>
+        </div>
+        <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] cursor-pointer border border-[var(--line)] reveal reveal-delay-3">
+          <img src="imagens/projetos/HALLAPARTAMENTONUNES.png" loading="lazy" class="w-full h-full object-cover transition-transform duration-[1.1s] group-hover:scale-[1.05]" alt="Hall apartamento Nunes" />
+          <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+            <h3 class="text-white font-display text-2xl md:text-3xl">Hall · Nunes</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="portfolio-details" class="max-h-0 overflow-hidden transition-all duration-700 ease-in-out">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mt-6 md:mt-8">
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/DetalhedaParededoQuarto.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Detalhe de parede do quarto" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Interiores</span>
+              <h3 class="text-white font-display text-2xl">Detalhe · quarto</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/SALADEESTUDOS.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Sala de estudos" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+              <h3 class="text-white font-display text-2xl">Sala de estudos</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/QuartoHomeOffice.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Quarto home office" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Interiores</span>
+              <h3 class="text-white font-display text-2xl">Quarto home office</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/SALADEREUNIAO.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Sala de reunião" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Comercial</span>
+              <h3 class="text-white font-display text-2xl">Sala de reunião</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/INTERIORDetalheFrontal.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Interior detalhe frontal" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Interiores</span>
+              <h3 class="text-white font-display text-2xl">Detalhe frontal</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/QuartoAconchegante.jpeg" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Quarto aconchegante" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+              <h3 class="text-white font-display text-2xl">Quarto aconchegante</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/QUARTOMARCOS.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Quarto Marcos" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+              <h3 class="text-white font-display text-2xl">Quarto Marcos</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/QUARTOMARCOS1.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Quarto Marcos vista 2" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+              <h3 class="text-white font-display text-2xl">Quarto Marcos · II</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/AreaGourmetCasaK.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Área gourmet Casa K" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+              <h3 class="text-white font-display text-2xl">Área gourmet · Casa K</h3>
+            </div>
+          </div>
+          <div class="portfolio-tile relative group overflow-hidden aspect-[3/4] border border-[var(--line)]">
+            <img src="imagens/projetos/FACHADACASAK.png" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[1.1s]" alt="Fachada Casa K" />
+            <div class="tile-caption absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-white/50 text-[10px] font-semibold tracking-[0.25em] uppercase mb-2">Residencial</span>
+              <h3 class="text-white font-display text-2xl">Fachada · Casa K</h3>
             </div>
           </div>
         </div>
@@ -237,309 +391,135 @@
     </div>
   </section>
 
-  <!-- DIFERENCIAIS -->
-  <section class="py-24 bg-slate-50 border-y border-slate-100">
-    <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-        <div class="flex flex-col items-center text-center group">
-          <div class="w-20 h-20 bg-white shadow-xl text-[#003366] flex items-center justify-center rounded-2xl mb-8 group-hover:bg-[#003366] group-hover:text-white transition-all duration-500">
-            <i data-lucide="clock" class="w-10 h-10"></i>
-          </div>
-          <h4 class="text-2xl font-bold text-slate-800 mb-4">Entrega no Prazo</h4>
-          <p class="text-slate-500 leading-relaxed">Metodologia ágil de gestão de obras para garantir que seu sonho não sofra atrasos.</p>
-        </div>
+  <section id="contato" class="py-24 md:py-32 bg-[var(--paper)] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[min(80vw,520px)] h-[min(80vw,520px)] bg-[var(--paper-warm)] rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
-        <div class="flex flex-col items-center text-center group">
-          <div class="w-20 h-20 bg-white shadow-xl text-[#003366] flex items-center justify-center rounded-2xl mb-8 group-hover:bg-[#003366] group-hover:text-white transition-all duration-500">
-            <i data-lucide="settings" class="w-10 h-10"></i>
-          </div>
-          <h4 class="text-2xl font-bold text-slate-800 mb-4">Customização</h4>
-          <p class="text-slate-500 leading-relaxed">Projetos autorais desenhados do zero para refletir sua identidade e necessidades específicas.</p>
-        </div>
-
-        <div class="flex flex-col items-center text-center group">
-          <div class="w-20 h-20 bg-white shadow-xl text-[#003366] flex items-center justify-center rounded-2xl mb-8 group-hover:bg-[#003366] group-hover:text-white transition-all duration-500">
-            <i data-lucide="shield-check" class="w-10 h-10"></i>
-          </div>
-          <h4 class="text-2xl font-bold text-slate-800 mb-4">Garantia Total</h4>
-          <p class="text-slate-500 leading-relaxed">Suporte técnico permanente e acompanhamento rigoroso para assegurar qualidade máxima.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERIA DE PROJETOS -->
-  <section id="projetos" class="py-28 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-        <div class="max-w-2xl">
-          <span class="text-[#003366] font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Portfólio</span>
-          <h2 class="text-4xl md:text-6xl font-bold text-slate-900">Projetos em Destaque</h2>
-        </div>
-        <a href="javascript:void(0)" id="toggle-portfolio-btn"
-          class="bg-slate-100 hover:bg-slate-200 text-[#003366] px-10 py-4 rounded-sm font-bold transition-all flex items-center gap-3">
-          VER PORTFÓLIO COMPLETO <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Casa do Lago">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
-            <h3 class="text-white text-3xl font-serif font-bold">Casa do Lago</h3>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Nexus Tower">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Corporativo</span>
-            <h3 class="text-white text-3xl font-serif font-bold">Nexus Tower</h3>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Campus Global">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Educacional</span>
-            <h3 class="text-white text-3xl font-serif font-bold">Campus Global</h3>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Praça das Artes">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-            <span class="text-slate-300 text-sm font-bold uppercase mb-2">Urbanismo</span>
-            <h3 class="text-white text-3xl font-serif font-bold">Praça das Artes</h3>
-          </div>
-        </div>
-      </div>
-
-      <div id="portfolio-details" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Placeholder Images (10 images) -->
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1519710164239-da116ffed49c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 1">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Projeto Sereno</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1540552737380-482a6f67233f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 2">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Comercial</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Espaço Urbano</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 3">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Vista Panorâmica</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1550592704-cc9b8772671f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 4">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Reforma</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Ambiente Renovado</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1554995207-c18c696e2e50?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 5">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Interiores</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Design Moderno</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8211b846e4?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 6">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Paisagismo</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Jardim Vertical</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1582268710928-8758872e4240?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 7">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Conforto Familiar</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1540552822452-f48372332617?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 8">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Comercial</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Café Conceito</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1518059103700-eb8926946654?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 9">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Interiores</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Espaço Minimalista</h3>
-            </div>
-          </div>
-          <div class="relative group overflow-hidden rounded-xl aspect-[3/4] cursor-pointer shadow-lg">
-            <img src="https://images.unsplash.com/photo-1456948577319-58b2110c14c3?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Projeto Detalhe 10">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#003366] via-transparent to-transparent opacity-0 group-hover:opacity-95 transition-all duration-500 flex flex-col justify-end p-10">
-              <span class="text-slate-300 text-sm font-bold uppercase mb-2">Residencial</span>
-              <h3 class="text-white text-3xl font-serif font-bold">Design Harmônico</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORMULÁRIO DE CONTATO -->
-  <section id="contato" class="py-28 bg-[#003366] relative overflow-hidden mb-12">
-    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]"></div>
-
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="bg-white rounded-3xl shadow-[0_50px_100px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col lg:flex-row">
-
-        <!-- Info Col -->
-        <div class="lg:w-2/5 bg-[#002244] p-10 text-white flex flex-col justify-between">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 relative z-10 reveal">
+      <div class="bg-[var(--surface)] border border-[var(--line)] shadow-[0_40px_100px_-40px_rgba(18,17,16,0.18)] overflow-hidden flex flex-col lg:flex-row">
+        <div class="lg:w-[42%] bg-[var(--ink)] text-[var(--paper)] p-10 md:p-14 flex flex-col justify-between min-h-[280px] lg:min-h-0">
           <div>
-            <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif">Inicie seu projeto hoje</h2>
-            <p class="text-slate-300 mb-12 text-lg leading-relaxed">
-              Estamos prontos para ouvir sua ideia e oferecer uma consultoria especializada para viabilizar seu investimento.
+            <span class="text-white/40 text-[11px] tracking-[0.35em] uppercase font-semibold">Contato</span>
+            <h2 class="font-display text-3xl md:text-4xl mt-6 mb-6 leading-tight">Vamos conversar sobre o seu projeto.</h2>
+            <p class="text-white/65 leading-relaxed text-[15px] mb-10">
+              O primeiro passo é entender o terreno, o programa de necessidades e o investimento previsto. Envie o briefing ou fale direto pelo WhatsApp.
             </p>
           </div>
-
-
+          <div class="space-y-5 text-[15px]">
+            <a href="https://wa.me/5563991386258" class="flex items-center gap-3 text-white/90 hover:text-white transition-colors">
+              <i data-lucide="message-circle" class="w-5 h-5 shrink-0 text-[var(--accent)]"></i>
+              (63) 99138-6258
+            </a>
+            <p class="flex items-start gap-3 text-white/65">
+              <i data-lucide="map-pin" class="w-5 h-5 shrink-0 text-[var(--accent)] mt-0.5"></i>
+              Palmas — Tocantins
+            </p>
+          </div>
         </div>
 
-        <!-- Form Col -->
-        <div class="lg:w-3/5 p-16">
-          <h2 class="text-3xl font-bold text-slate-800 mb-8">BRIEFING DE ARQUITETURA – CONSTRUÇÃO</h2>
-
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPMp5SCZpZ51mzf-wTCXIkOtgTpD8GOUbh4rZzkx4cOYJ_Kg/viewform?usp=header" target="_blank"
-            class="w-full bg-[#003366] hover:bg-[#002244] text-white font-bold py-5 rounded-xl shadow-xl transition-all active:scale-[0.98] uppercase tracking-[0.2em] text-lg mb-8 text-center block">
-            Preencher Briefing
+        <div class="lg:w-[58%] p-10 md:p-14 flex flex-col justify-center">
+          <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-3">Briefing de arquitetura</h3>
+          <p class="text-[var(--ink-muted)] text-[15px] leading-relaxed mb-10">
+            Formulário estruturado para agilizar a análise inicial e retornar com próximos passos.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPMp5SCZpZ51mzf-wTCXIkOtgTpD8GOUbh4rZzkx4cOYJ_Kg/viewform?usp=header" target="_blank" rel="noopener noreferrer"
+            class="btn-primary w-full inline-flex justify-center items-center py-4 text-[12px] font-semibold tracking-[0.22em] uppercase mb-5">
+            Abrir formulário
           </a>
-
+          <a href="https://wa.me/5563991386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank" rel="noopener noreferrer"
+            class="w-full inline-flex justify-center items-center gap-2 py-4 text-[12px] font-semibold tracking-[0.18em] uppercase border border-[var(--line)] text-[var(--ink)] hover:border-[var(--ink)] transition-colors">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            Preferir WhatsApp
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="footer" class="bg-[#001122] text-slate-400 py-20 border-t border-white/5">
-    <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20 justify-items-center">
-
-        <div class="col-span-1 md:col-span-1">
-          <div class="flex items-center space-x-2 mb-8">
-            <div class="w-8 h-8 bg-white flex items-center justify-center rounded-sm">
-              <span class="text-[#001122] font-bold text-lg">G</span>
+  <footer class="bg-[var(--deep)] text-white/55 py-16 md:py-20 border-t border-white/[0.06]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-14 lg:gap-10 mb-16">
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-3 mb-8">
+            <img
+              src="imagens/logos/LOGOGHARQUITETOPNG3.png"
+              alt="Gustavo Henrique Arquitetura"
+              width="40"
+              height="40"
+              class="h-10 w-10 object-contain shrink-0 opacity-90"
+              loading="lazy"
+              decoding="async"
+            />
+            <div>
+              <span class="block text-white font-display text-xl tracking-wide">Gustavo Henrique</span>
+              <span class="text-[10px] uppercase tracking-[0.35em] text-white/40">Arquiteto e urbanista</span>
             </div>
-            <span class="text-white font-serif text-2xl font-bold tracking-tight">GUSTAVO HENRIQUE ARQ</span>
           </div>
-
-          <p class="text-base leading-relaxed mb-8">
-            Consolidando visões em estruturas tangíveis desde 2023. Tecnologia, arte e engenharia em perfeita sintonia.
+          <p class="text-[15px] leading-relaxed max-w-sm text-white/50 mb-8">
+            Arquitetura com foco em legado: projetos claros, bem documentados e alinhados à realidade de obra.
           </p>
-
-          <div class="flex space-x-5">
-            <a href="https://www.instagram.com/arq.gustavoh?igsh=MXRuMnRlYmU3Z2FpNA==" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#003366] hover:text-white transition-all">
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/arq.gustavoh?igsh=MXRuMnRlYmU3Z2FpNA==" target="_blank" rel="noopener noreferrer" class="w-11 h-11 border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all" aria-label="Instagram">
               <i data-lucide="instagram" class="w-5 h-5"></i>
             </a>
-            <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#003366] hover:text-white transition-all">
+            <a href="#" class="w-11 h-11 border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all opacity-40 pointer-events-none" aria-label="Facebook (em breve)" title="Em breve">
               <i data-lucide="facebook" class="w-5 h-5"></i>
             </a>
-            <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#003366] hover:text-white transition-all">
+            <a href="#" class="w-11 h-11 border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all opacity-40 pointer-events-none" aria-label="LinkedIn (em breve)" title="Em breve">
               <i data-lucide="linkedin" class="w-5 h-5"></i>
             </a>
           </div>
         </div>
 
-        <div>
-          <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Explorar</h4>
-          <ul class="space-y-4">
+        <div class="lg:col-span-2">
+          <h4 class="text-white text-[11px] font-semibold tracking-[0.3em] uppercase mb-6">Navegação</h4>
+          <ul class="space-y-3 text-[15px]">
             <li><a href="#home" class="hover:text-white transition-colors">Início</a></li>
-            <li><a href="#servicos" class="hover:text-white transition-colors">Serviços Especializados</a></li>
-            <li><a href="#projetos" class="hover:text-white transition-colors">Portfólio de Obras</a></li>
-            <li><a href="#contato" class="hover:text-white transition-colors">Solicitar Orçamento</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
+            <li><a href="#projetos" class="hover:text-white transition-colors">Projetos</a></li>
+            <li><a href="#contato" class="hover:text-white transition-colors">Contato</a></li>
           </ul>
         </div>
 
-                <div>
+        <div class="lg:col-span-3">
+          <h4 class="text-white text-[11px] font-semibold tracking-[0.3em] uppercase mb-6">Atendimento</h4>
+          <ul class="space-y-4 text-[15px]">
+            <li class="flex gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-[var(--accent)] shrink-0"></i>
+              Palmas — TO
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="phone" class="w-5 h-5 text-[var(--accent)] shrink-0"></i>
+              <a href="tel:+5563991386258" class="hover:text-white transition-colors">(63) 99138-6258</a>
+            </li>
+          </ul>
+        </div>
 
-                  <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Contato</h4>
+        <div class="lg:col-span-2">
+          <h4 class="text-white text-[11px] font-semibold tracking-[0.3em] uppercase mb-6">Serviços</h4>
+          <ul class="space-y-3 text-[15px]">
+            <li><a href="#servicos" class="hover:text-white transition-colors">Residencial</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Comercial</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Institucional</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Interiores</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Consultoria</a></li>
+          </ul>
+        </div>
+      </div>
 
-                  <ul class="space-y-6">
-
-                    <li class="flex items-start gap-4">
-
-                      <i data-lucide="map-pin" class="w-5 h-5 text-white shrink-0"></i>
-
-                      <span>Palmas - Tocantins</span>
-
-                    </li>
-
-                    <li class="flex items-center gap-4">
-
-                      <i data-lucide="phone" class="w-5 h-5 text-white"></i>
-
-                      <span>(63) 99138-6258</span>
-
-                    </li>
-
-                  </ul>
-
-                </div>
-
-        
-
-                <div>
-
-                  <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Serviços</h4>
-
-                            <ul class="space-y-4">
-
-                              <li><a href="#servicos" class="hover:text-white transition-colors">Projetos residências</a></li>
-
-                              <li><a href="#servicos" class="hover:text-white transition-colors">Projetos Comerciais</a></li>
-
-                              <li><a href="#servicos" class="hover:text-white transition-colors">Projetos Institucionais</a></li>
-
-                              <li><a href="#servicos" class="hover:text-white transition-colors">Projetos Interiores</a></li>
-
-                              <li><a href="#servicos" class="hover:text-white transition-colors">Consultoria</a></li>
-
-                            </ul>
-                </div>
-              </div>
-
-      <div class="pt-10 border-t border-white/5 text-center">
-        <p class="text-xs tracking-[0.3em] text-slate-500 uppercase">
-          &copy; <span id="year"></span> Gustavo Henrique Arquiteto e Urbanista. Criado com excelência para resultados extraordinários.
-        </p>
+      <div class="pt-10 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] tracking-[0.2em] uppercase text-white/35">
+        <p>&copy; <span id="year"></span> Gustavo Henrique. Todos os direitos reservados.</p>
+        <p class="text-white/25">Arquitetura · Urbanismo · Interiores</p>
       </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOATING -->
-  <a href="https://wa.me/5563991386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank"
-    class="fixed bottom-10 right-10 bg-emerald-500 text-white p-5 rounded-full shadow-[0_15px_35px_rgba(16,185,129,0.4)] hover:scale-110 active:scale-95 transition-all z-50 group"
-    aria-label="Abrir WhatsApp">
-    <i data-lucide="phone" class="w-7 h-7"></i>
-    <span class="absolute right-full mr-6 bg-white text-[#003366] px-5 py-2.5 rounded-xl text-sm font-bold shadow-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-all whitespace-nowrap -translate-y-1/4">
-      Olá! Como podemos ajudar?
-    </span>
+  <a href="https://wa.me/5563991386258?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20mais%20sobre%20seu%20trabalho." target="_blank" rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 md:bottom-10 md:right-10 bg-[var(--ink)] text-white p-4 md:p-4 rounded-full shadow-[0_12px_40px_-8px_rgba(18,17,16,0.45)] hover:scale-105 active:scale-95 transition-transform z-50 group border border-white/10"
+    aria-label="Conversar no WhatsApp">
+    <i data-lucide="message-circle" class="w-6 h-6 md:w-7 md:h-7"></i>
+    <span class="sr-only">WhatsApp</span>
   </a>
 
   <script src="script.js"></script>
-
-  <!-- Lucide init + year fallback (caso não esteja no seu script.js) -->
-  <script>
-    if (window.lucide) lucide.createIcons();
-    const yearEl = document.getElementById("year");
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
